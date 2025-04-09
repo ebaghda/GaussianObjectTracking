@@ -123,6 +123,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,6 +140,7 @@
     <ClInclude Include="BlobDetection.h" />
     <ClInclude Include="CalculateMoments.h" />
     <ClInclude Include="GUIControls.h" />
+    <ClInclude Include="ReadCSV.h" />
     <ClInclude Include="UpdateBrightnessAndContrast.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

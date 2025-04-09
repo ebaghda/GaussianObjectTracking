@@ -10,12 +10,13 @@
 #include <filesystem>
 #include "BlobDetection.h"
 #include "CalculateMoments.h" //need to clean up this file
+#include "ReadCSV.h"
 
 // User-defined input:
 cv::String path{ "C:/Users/baghd/Videos/key0_mM_benzaldehyde_010.avi" }; //video file path
 float rescaleFactor{ 0.5 }; // image resizing upon load. Choose 1 for maximum sensitivity choose a value less than one to resize the image for viewing and for speed
 bool saveTrackingResults{true}; // boolean to toggle saving the object detection data to a .csv in the ~ folder (powershell> $HOME).
-bool showIntermediateImages{true}; // bolean to toggle display of intermediate processing steps
+bool showIntermediateImages{false}; // bolean to toggle display of intermediate processing steps
 
 double totalFramesInVideo{0};
 std::ofstream outFile(path.substr(0, path.length() - 4) + "_blob-detection.csv"); //prepare output file
@@ -72,8 +73,13 @@ int main()
     if (pressedKey == 'e' || pressedKey == 27) break; //close if "e" or "escape" is pressed while a video window is active
     if (pressedKey == 'p') pressedKey = cv::waitKey(); // pause code execution if 'p' is 
   }
-  std::cout<< "\nCompleted processing " << cap.get(cv::CAP_PROP_POS_FRAMES) << "Frames\n" << std::endl; //upon completion, this should be the total number of captured frames
+  std::cout<< "\nCompleted processing " << cap.get(cv::CAP_PROP_POS_FRAMES) << " frames" << std::endl; //upon completion, this should be the total number of captured frames
   if (outFile.is_open()) outFile.close(); //file cleanup
   if (cap.isOpened()) cap.release(); //file cleanup
+
+  std::vector<Localization> locs{};
+  locs = readCSV(path.substr(0, path.length() - 4) + "_blob-detection.csv");
+  int locsLength = locs.size();
+  std::cout << locs[locsLength-1].frame << std::endl;
   return 0;
 }

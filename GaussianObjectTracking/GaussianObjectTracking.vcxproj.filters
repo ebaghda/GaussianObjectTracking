@@ -32,5 +32,8 @@
     <ClInclude Include="CalculateMoments.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ReadCSV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
