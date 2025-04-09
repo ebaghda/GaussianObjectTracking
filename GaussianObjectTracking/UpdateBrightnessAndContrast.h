@@ -2,7 +2,7 @@
 * cv::Mat img;
 * int main ()
 * {
-* generateTrackbar(); //UpdateBrightnessAndContrast.h function (1of2) to allow for live, manual brightness and contrast control 
+* generateBrightnessAndContrastTrackbar(); //UpdateBrightnessAndContrast.h function (1of2) to allow for live, manual brightness and contrast control 
 * std::string path{"path/to/video.avi"};
 * 
 * cv::VideoCapture cap(path);
@@ -23,25 +23,24 @@
 #include <opencv2/highgui.hpp>
 
 // variables for manual brightness and contrast selection
-int alpha{ 5 };
+int alpha{ 12 };
 int beta{ 0 };
 
 void on_alpha_trackbar(int pos, void* userdata) 
 {
   (void) userdata;
   alpha = pos;
-  std::cout << "Alpha/gain/contrast set to: " << alpha << std::endl;
-  // Perform actions based on the new alpha_value here
+  std::cout << "\nAlpha/gain/contrast set to: " << alpha << std::endl;
 }
 
 void on_beta_trackbar(int pos, void* userdata)
 {
   (void) userdata;
   beta = pos;
-  std::cout << "Beta/bias/brightness set to: " << beta << std::endl;
+  std::cout << "\nBeta/bias/brightness set to: " << beta << std::endl;
 }
 
-void generateTrackbar()
+void generateBrightnessAndContrastTrackbar()
 {
   cv::namedWindow("Trackbars", cv::WINDOW_NORMAL);
   cv::resizeWindow("Trackbars", 640, 190);

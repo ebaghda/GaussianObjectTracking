@@ -26,5 +26,11 @@
     <ClInclude Include="UpdateBrightnessAndContrast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BlobDetection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculateMoments.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

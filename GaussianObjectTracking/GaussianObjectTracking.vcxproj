@@ -136,6 +136,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlobDetection.h" />
+    <ClInclude Include="CalculateMoments.h" />
     <ClInclude Include="GUIControls.h" />
     <ClInclude Include="UpdateBrightnessAndContrast.h" />
   </ItemGroup>
