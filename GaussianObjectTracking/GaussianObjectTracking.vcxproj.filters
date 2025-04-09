@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GUIControls.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="UpdateBrightnessAndContrast.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -139,7 +139,6 @@
   <ItemGroup>
     <ClInclude Include="BlobDetection.h" />
     <ClInclude Include="CalculateMoments.h" />
-    <ClInclude Include="GUIControls.h" />
     <ClInclude Include="ReadCSV.h" />
     <ClInclude Include="UpdateBrightnessAndContrast.h" />
   </ItemGroup>

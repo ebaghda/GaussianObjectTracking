@@ -4,7 +4,6 @@
 #include <iostream>
 #include "UpdateBrightnessAndContrast.h" // header file to allow for live, manual brightness and contrast control
 #include <opencv2/features2d.hpp>
-//#include "GUIControls.h" //need to clean up this file
 #include <iomanip>
 #include <fstream>
 #include <filesystem>
@@ -14,7 +13,8 @@
 
 // User-defined input:
 cv::String path{ "C:/Users/baghd/Videos/key0_mM_benzaldehyde_010.avi" }; //video file path
-float rescaleFactor{ 0.5 }; // image resizing upon load. Choose 1 for maximum sensitivity choose a value less than one to resize the image for viewing and for speed
+float rescaleFactor{ 0.5 }; // image resizing upon load. Choose 1 for maximum sensitivity choose a value less 
+//than one to resize the image for viewing and for speed
 bool saveTrackingResults{true}; // boolean to toggle saving the object detection data to a .csv in the ~ folder (powershell> $HOME).
 bool showIntermediateImages{false}; // bolean to toggle display of intermediate processing steps
 
@@ -28,7 +28,8 @@ int pressedKey{-1}; //initiallize pressedKeyvalue
 int main()
 {
   std::cout << "Reading file: " << path << "\n" << "Press \"e\" or \"esc\" on active video window to exit playback." << std::endl;
-  generateBrightnessAndContrastTrackbar(); // UpdateBrightnessAndContrast.h function (1of2) to allow for live, manual brightness and contrast control
+  generateBrightnessAndContrastTrackbar(); // UpdateBrightnessAndContrast.h function (1of2) 
+  //to allow for live, manual brightness and contrast control
 
   cv::VideoCapture cap(path);
   totalFramesInVideo = cap.get(cv::CAP_PROP_FRAME_COUNT);
@@ -80,6 +81,6 @@ int main()
   std::vector<Localization> locs{};
   locs = readCSV(path.substr(0, path.length() - 4) + "_blob-detection.csv");
   int locsLength = locs.size();
-  std::cout << locs[locsLength-1].frame << std::endl;
+  std::cout << locsLength << " localizations successfully detected." << std::endl;
   return 0;
 }

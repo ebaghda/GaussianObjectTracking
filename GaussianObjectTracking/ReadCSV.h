@@ -45,5 +45,5 @@ std::vector<Localization> readCSV(std::string filename)
     }
   }
   file.close();
-
+  std::puts("Completed reading CSV");
 }
