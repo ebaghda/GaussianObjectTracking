@@ -18,15 +18,15 @@ params.maxArea = 200;
 
 // Filter by Circularity
 params.filterByCircularity = false;
-params.minCircularity = 0.8;
+params.minCircularity = (float)0.8;
 
 // Filter by Convexity
 params.filterByConvexity = false;
-params.minConvexity = 0.95;
+params.minConvexity = (float)0.95;
 
 // Filter by Inertia
 params.filterByInertia = false;
-params.minInertiaRatio = 0.01;
+params.minInertiaRatio = (float)0.01;
 
 // 3. Create a SimpleBlobDetector object using the parameters
 cv::Ptr<cv::SimpleBlobDetector> detector = cv::SimpleBlobDetector::create(params);

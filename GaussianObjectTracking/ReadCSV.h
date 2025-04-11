@@ -7,10 +7,11 @@
 
 struct Localization
 {
-  int frame;
-  float x_px;
-  float y_px;
-  float size;
+  int frame{};
+  float x_px{};
+  float y_px{};
+  float size{};
+  int track_id{-1};
 };
 
 std::vector<Localization> readCSV(std::string filename)
@@ -32,7 +33,8 @@ std::vector<Localization> readCSV(std::string filename)
     Localization point;
     std::string frameStr, xStr, yStr, sizeStr;
 
-    if (std::getline(ss, frameStr, ',') &&
+    if (file.is_open() &&
+      std::getline(ss, frameStr, ',') &&
       std::getline(ss, xStr, ',') &&
       std::getline(ss, yStr, ',') &&
       std::getline(ss, sizeStr, ',')) 
@@ -46,4 +48,5 @@ std::vector<Localization> readCSV(std::string filename)
   }
   file.close();
   std::puts("Completed reading CSV");
+  return locs;
 }

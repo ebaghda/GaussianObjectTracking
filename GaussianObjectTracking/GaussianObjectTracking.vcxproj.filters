@@ -32,5 +32,14 @@
     <ClInclude Include="ReadCSV.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CalculateMSD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="linkTrajectories.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timeExecution.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

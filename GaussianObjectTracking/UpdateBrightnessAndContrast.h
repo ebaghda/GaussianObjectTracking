@@ -1,4 +1,5 @@
 /* Pseudo-code example for header function use: 
+* // header file to allow for live, manual brightness and contrast control
 * cv::Mat img;
 * int main ()
 * {
@@ -68,4 +69,9 @@ cv::Mat updateBrightnessAndContrast(cv::Mat image)
   //}
   image.convertTo(new_image, -1, alpha, beta); //replaces the for loop to perform a transformation output = alpha*input+beta
   return new_image;
+}
+cv::Mat updateBrightnessAndContrast2(cv::Mat image)
+{
+  image.convertTo(image, -1, alpha, beta); //replaces the for loop to perform a transformation output = alpha*input+beta
+  return image;
 }
