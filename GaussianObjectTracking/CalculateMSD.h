@@ -15,7 +15,7 @@ std::vector<float> computeMSD(const std::vector<Localization>& traj) {
 
   cv::uint64_t maxLag = N / 2;  // or another value depending on your preference
 
-  for (int lag = 1; lag <= maxLag; ++lag) {
+  for (long long lag = 1; lag <= maxLag; ++lag) {
     float sum = 0.0f;
     int count = 0;
 
